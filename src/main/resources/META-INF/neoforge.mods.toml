@@ -1,0 +1,23 @@
+modLoader="javafml"
+loaderVersion="*"
+license='ARR'
+
+[[mods]]
+    modId="${mod_id}"
+    version="${version}"
+    displayName="${name}"
+    credits="Joespeph, RXJpaw"
+    authors="EldarGods"
+    description='''
+    ${description}
+    '''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    mandatory=true
+    versionRange="*"
+    ordering="NONE"
+    side="BOTH"
+
+[[mixins]]
+config="${mod_id}-common.mixins.json"
