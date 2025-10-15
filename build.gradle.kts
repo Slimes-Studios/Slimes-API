@@ -244,6 +244,22 @@ publishing {
 
 			from(components["java"])
 		}
+
+		create<MavenPublication>("jitpack") {
+			groupId = "com.github.Slimes-Studios"
+			artifactId = "Slimes-API"
+			version = mod.version
+
+			artifact(tasks.remapJar.get()) {
+				builtBy(tasks.remapJar)
+			}
+			artifact(tasks.remapSourcesJar.get()) {
+				builtBy(tasks.remapSourcesJar)
+				classifier = "sources"
+			}
+			from(components["java"])
+		}
+
 	}
 }
 
